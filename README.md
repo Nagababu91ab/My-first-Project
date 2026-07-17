@@ -1,38 +1,96 @@
-from tkinter import *
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nagababu Platform</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+        }
 
-root = Tk()
-root.title("Restaurant Bill System")
-root.geometry("400x450")
+        header {
+            background: #0078D7;
+            color: white;
+            padding: 20px;
+        }
 
-item1 = IntVar()
-item2 = IntVar()
-item3 = IntVar()
+        .container {
+            margin: 50px auto;
+            width: 80%;
+        }
 
-def calculate_bill():
-    price1 = item1.get() * 50   
-    price2 = item2.get() * 30  
-    price3 = item3.get() * 20 
-    
-    total = price1 + price2 + price3
-    result_label.config(text=f"Total Bill: ₹{total}")
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
 
-Label(root, text="🍽️ Restaurant Bill System", font=("Arial", 16, "bold")).pack(pady=10)
+        footer {
+            background: #222;
+            color: white;
+            padding: 15px;
+            margin-top: 40px;
+        }
 
-frame = Frame(root)
-frame.pack(pady=10)
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-Label(frame, text="Burger (₹50): ").grid(row=0, column=0, padx=10, pady=5)
-Entry(frame, textvariable=item1).grid(row=0, column=1)
+        button:hover {
+            background: darkgreen;
+        }
+    </style>
+</head>
+<body>
 
-Label(frame, text="Pizza (₹30): ").grid(row=1, column=0, padx=10, pady=5)
-Entry(frame, textvariable=item2).grid(row=1, column=1)
+<header>
+    <h1>Welcome to Nagababu Platform</h1>
+    <p>My First Website Hosted on Render</p>
+</header>
 
-Label(frame, text="Tea (₹20): ").grid(row=2, column=0, padx=10, pady=5)
-Entry(frame, textvariable=item3).grid(row=2, column=1)
+<div class="container">
 
-Button(root, text="Calculate Bill", command=calculate_bill, bg="green", fg="white").pack(pady=20)
+    <div class="card">
+        <h2>About Me</h2>
+        <p>Hello! I am Nagababu. I am learning HTML, CSS, JavaScript, Node.js, Express, MongoDB and Web Development.</p>
+    </div>
 
-result_label = Label(root, text="Total Bill: ₹0", font=("Arial", 14))
-result_label.pack()
+    <div class="card">
+        <h2>Projects</h2>
+        <p>✔ Frontend Development</p>
+        <p>✔ Backend Development</p>
+        <p>✔ MongoDB Database</p>
+        <p>✔ Apache Server</p>
+    </div>
 
-root.mainloop()
+    <button onclick="showMessage()">Click Me</button>
+
+    <p id="msg"></p>
+
+</div>
+
+<footer>
+    <p>© 2026 Nagababu Platform. All Rights Reserved.</p>
+</footer>
+
+<script>
+function showMessage() {
+    document.getElementById("msg").innerHTML =
+    "🎉 Welcome! Your website is running successfully on Render.";
+}
+</script>
+
+</body>
+</html>
